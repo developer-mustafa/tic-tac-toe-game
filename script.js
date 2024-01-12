@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateMessage() {
-        message.textContent = ` এখন খেলছে : ${getPlayerName(currentPlayer)}`;
+        message.textContent = ` এখন খেলবে : ${getPlayerName(currentPlayer)}`;
     }
 
     function getStoredBoard() {
