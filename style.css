@@ -33,24 +33,28 @@ body {
 h1 {
     color: #01c522;
     margin-bottom: 0px;
+    text-align: center;
     
 }
 
 .container {
     display: flex;
-    
+    padding: 2%;
     align-items: center;
+    justify-content: center;
 }
 
 .players {
     
     display: flex;
     gap: 5px;
+    justify-content: center;
 }
 
 h2 {
     color: rgb(224, 204, 26);
     margin: 4px;
+    text-align: center;
 }
 
 .player-inputs {
@@ -151,5 +155,10 @@ h3{
 @media only screen and (max-width:650px){
 .container{
     flex-direction: column;
+}
+h1{
+    font-size: 1rem;
+    margin: 0;
+    text-align: center;
 }
 }
