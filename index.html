@@ -3,144 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-
-    <style>
-
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background-color: #1a1a1a;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-}
-
-h1 {
-    color: #01c522;
-    margin: 0;
-}
-
-#board {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-gap: 5px;
-    margin-top: 20px;
-    max-width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.cell {
-    width: 100px;
-    height: 100px;
-    border: 2px solid #333;
-    font-size: 2em;
-    cursor: pointer;
-    
-    color: #27f210;
-    transition: background-color 0.3s, color 0.3s;
-   border:3px solid rgb(24, 185, 24);
-}
-
-.cell:hover {
-    /* background-color: #4a4a4a; */
-    box-shadow: 5px 5px 5px 7px rgb(11, 159, 223);
-}
-
-#message {
-    margin-top: 20px;
-    font-size: 2.5em;
-    color: #f91866;
-    font-weight: bold;
-   
-}
-
-h2{
-color: rgb(216, 158, 10);
-}
-    </style>
-
-    <title>Tic Tac Toe </title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your stylesheet if any -->
+    <title>Tic Tac Toe</title>
 </head>
 <body>
-    <h1>Tic Tac Toe made by </h1>
-    <h2>Mustafa Rahman</h2> 
-
-    <div id="board"></div>
-    <div id="message"></div>
-
+  
+    
+    <div class="container">
+       
+        <div class="top-box">
+            <h1>Tic Tac Toe Game</h1>
+            <div class="players">
+            <h2 id="player1">Player 1</h2>
+            <h2>vs</h2>
+            <h2 id="player2">Player 2</h2>
+            </div>
+            <button id="reset-btn">রিসেট করুন</button>
         
-    </body>
+            <div class="player-inputs">
+                <input type="text" id="player1Name" placeholder="১ম খেলোয়াড়ের নাম দিন">
+                <input type="text" id="player2Name" placeholder="২য় খেলোয়াড়ের নাম দিন">
+                <button id="setNamesBtn"> নাম সেট করুন</button>
+                <h2>তৈরী করেছেন <a href="https://learnwithmustafa.vercel.app" target="_blank">Mustafa Rahman</a> </h2>
+            </div>
+        </div>
+
+       <div class="bottom-box">
+        <div id="board"></div>
+        <div id="message"></div>
+       </div>
+    </div>
 
 
-   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-    const board = document.getElementById('board');
-    const message = document.getElementById('message');
-    let currentPlayer = 'X';
-    let gameBoard = ['', '', '', '', '', '', '', '', ''];
-    let gameActive = true;
 
-    // Create the Tic Tac Toe board
-    for (let i = 0; i < 9; i++) {
-        const cell = document.createElement('div');
-        cell.classList.add('cell');
-        cell.dataset.index = i;
-        cell.addEventListener('click', handleCellClick);
-        board.appendChild(cell);
-    }
-
-    function handleCellClick(event) {
-        const index = event.target.dataset.index;
-
-        if (gameBoard[index] === '' && gameActive) {
-            gameBoard[index] = currentPlayer;
-            event.target.textContent = currentPlayer;
-
-            if (checkForWinner()) {
-                endGame(`${currentPlayer} wins!`);
-            } else if (gameBoard.every(cell => cell !== '')) {
-                endGame("It's a draw!");
-            } else {
-                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-                updateMessage();
-            }
-        }
-    }
-
-    function checkForWinner() {
-        const winPatterns = [
-            [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
-            [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
-            [0, 4, 8], [2, 4, 6]             // Diagonals
-        ];
-
-        for (const pattern of winPatterns) {
-            const [a, b, c] = pattern;
-            if (gameBoard[a] !== '' && gameBoard[a] === gameBoard[b] && gameBoard[a] === gameBoard[c]) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    function endGame(result) {
-        gameActive = false;
-        message.textContent = result;
-    }
-
-    function updateMessage() {
-        message.textContent = `Current player: ${currentPlayer}`;
-    }
-});
-
-   </script>
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
 </body>
 </html>

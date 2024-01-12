@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;700&family=Poppins:ital,wght@0,400;0,600;0,700;1,600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+a{
+    color:rgb(10, 192, 192);
+    text-decoration: none;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Hind Siliguri', sans-serif;
+    text-align: center;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: #01c522;
+    margin-bottom: 0px;
+    
+}
+
+.container {
+    display: flex;
+    
+    align-items: center;
+}
+
+.players {
+    
+    display: flex;
+    gap: 5px;
+}
+
+h2 {
+    color: rgb(224, 204, 26);
+    margin: 4px;
+}
+
+.player-inputs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap:10px;
+   
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 10px;
+    width:90%;
+    margin:auto;
+   
+
+   
+    border: 2px solid #27f210;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+button {
+    padding: 10px;
+    background-color: #f91866;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#setNamesBtn{
+    background-color: #1f9305;
+    width: 50%;
+    margin: auto;
+}
+#setNamesBtn:hover{
+    background-color: #24b104;
+}
+button:hover {
+    background-color: #d00c55;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 110px);
+    grid-gap: 10px;
+    margin-top: 10px;
+    max-width: 350px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #333;
+    font-size: 2em;
+    cursor: pointer;
+    color: #27f210;
+    transition: background-color 0.3s, color 0.3s;
+    border: 3px solid rgb(24, 185, 24);
+}
+
+.cell:hover {
+    box-shadow: 3px 3px 20px 5px rgb(11, 159, 223);
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #2bb6fb;
+    font-weight: bold;
+
+    
+}
+
+#reset-btn {
+    margin: 12px;
+    padding: 10px;
+    background-color: #f91866;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+h3{
+    color: #f8ba1c;
+}
+#reset-btn:hover {
+    background-color: #d00c55;
+}
+
+
+@media only screen and (max-width:650px){
+.container{
+    flex-direction: column;
+}
+}
